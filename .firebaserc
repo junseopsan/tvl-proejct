@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "leeontvp-de787"
+  },
+  "targets": {
+    "leeontvp-de787": {
+      "hosting": {
+        "tvlfront": [
+          "tvlfront"
+        ]
+      }
+    }
+  }
+}

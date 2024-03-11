@@ -1,5 +1,7 @@
 <template>
+  <div class="flex flex-col justify-between overflow-hidden">
     <div class="flex-grow h-96"></div>
+
     <div class="flex flex-col items-center">
       <div class="flex flex-col items-center space-y-3">
         <svg
@@ -23,6 +25,28 @@
           <v-btn block>Block Button</v-btn>
         </div>
         <div>
+          <v-menu
+            v-model="menu2"
+            :close-on-content-click="false"
+            :nudge-right="40"
+            lazy
+            transition="scale-transition"
+            offset-y
+            full-width
+            min-width="290px"
+          >
+            <template v-slot:activator="{ on }">
+              <v-text-field
+                v-model="date"
+                label="Picker without buttons"
+                prepend-icon="event"
+                readonly
+                v-on="on"
+              ></v-text-field>
+            </template>
+            <v-date-picker v-model="date" @input="menu2 = false"></v-date-picker>
+          </v-menu>
+
         </div>
         <div class="pb-4 mt-4 font-sans text-xs text-gray-500">
           특허 공개/등록번호의 정보를 기반으로 기술가치평가가 시작됩니다.
@@ -72,11 +96,12 @@
         입력해주세요.
       </p>
     </div>
+  </div>
 </template>
 
 <script setup>
+import { mainprocess_get_patent_info } from "@/api";
 import { useAppStore } from "@/store/app";
-import { mainprocess_get_patent_info } from "@/tvl_api";
 import { ExclamationCircleIcon } from "@heroicons/vue/20/solid";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
@@ -149,3 +174,4 @@ const submitInput = () => {
     });
 };
 </script>
+@/fireApi

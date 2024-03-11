@@ -11,8 +11,8 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
   app: {
     title: 'tech-Eval',
     logo: h('div', { innerHTML: logo, style: 'line-height:0; color: rgb(var(--v-global-theme-primary))' }),
-    contentWidth: ContentWidth.Boxed,
-    contentLayoutNav: AppContentLayoutNav.Vertical,
+    contentWidth: ContentWidth.Fluid,
+    contentLayoutNav: AppContentLayoutNav.Horizontal,
     overlayNavFromBreakpoint: breakpointsVuetify.md + 16,
     i18n: {
       enable: false,
@@ -35,13 +35,13 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
         },
       ],
     },
-    theme: 'system',
+    theme: 'light',
     skin: Skins.Default,
     iconRenderer: VIcon,
   },
   navbar: {
     type: NavbarType.Sticky,
-    navbarBlur: true,
+    navbarBlur: false,
   },
   footer: { type: FooterType.Static },
   verticalNav: {

@@ -1,11 +1,11 @@
 <script setup>
-import navItems from '@/navigation/horizontal'
-import { themeConfig } from '@themeConfig'
+import { themeConfig } from '@themeConfig';
 
 // Components
-import Footer from '@/layouts/components/Footer.vue'
-import { HorizontalNavLayout } from '@layouts'
-import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
+import Footer from '@/layouts/components/Footer.vue';
+import SideBarMain from '@/layouts/components/SideBarMain.vue';
+import { HorizontalNavLayout } from '@layouts';
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer';
 
 // SECTION: Loading Indicator
 const isFallbackStateActive = ref(false)
@@ -24,7 +24,7 @@ watch([
 </script>
 
 <template>
-  <HorizontalNavLayout :nav-items="navItems">
+  <HorizontalNavLayout >
     <!-- 👉 navbar -->
     <template #navbar>
       <RouterLink
@@ -45,15 +45,20 @@ watch([
     <AppLoadingIndicator ref="refLoadingIndicator" />
 
     <!-- 👉 Pages -->
-    <RouterView v-slot="{ Component }">
-      <Suspense
+    <div class="flex h-full">
+      <SideBarMain/>
+      <RouterView v-slot="{ Component }">
+        <Suspense
         :timeout="0"
         @fallback="isFallbackStateActive = true"
         @resolve="isFallbackStateActive = false"
-      >
-        <Component :is="Component" />
-      </Suspense>
-    </RouterView>
+        >
+          <main class="overflow-y-hidden w-[80%]">
+            <Component :is="Component" />
+          </main>
+        </Suspense>
+      </RouterView>
+    </div>
 
     <!-- 👉 Footer -->
     <template #footer>

@@ -122,11 +122,11 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from "vue";
-import { useAppStore } from "@/store/app";
-import StepButton from "@/modules/StepButton.vue";
-import { updateTask, deleteStep, checkStepObj } from "@/utils/fsdb";
 import { mainprocess_send_step } from "@/api";
+import StepButton from "@/modules/StepButton.vue";
+import { useAppStore } from "@/store/app";
+import { checkStepObj, deleteStep, updateTask } from "@/utils/fsdb";
+import { computed, onMounted, ref } from "vue";
 
 const appStore = useAppStore();
 const selectedProduct = ref("");
@@ -180,3 +180,4 @@ const action1 = async (isTrue) => {
   console.log(appStore.task.product);
 };
 </script>
+@/fireApi

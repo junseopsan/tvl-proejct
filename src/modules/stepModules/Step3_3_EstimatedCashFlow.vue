@@ -37,12 +37,12 @@
             </svg>
           </div>
           <div>
-            <datepicker
+            <!-- <datepicker
               v-model="evalDate"
               type="text"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 cursor-pointer"
               placeholder="평가 기준일을 선택하세요."
-            />
+            /> -->
           </div>
         </div>
       </div>
@@ -132,7 +132,7 @@ import { step6_1_14 } from "@/utils/calculator";
 import { updateTask } from "@/utils/fsdb";
 import { computed, ref, watch } from "vue";
 import { useRouter } from "vue-router";
-import Datepicker from "vue3-datepicker";
+// import Datepicker from "vue3-datepicker";
 
 const appStore = useAppStore();
 const router = useRouter();

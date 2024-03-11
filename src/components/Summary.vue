@@ -77,7 +77,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
 import { useAppStore } from "@/store/app";
 
 import Step1_1_PatentsInfoSum from "@/modules/summaryModules/Step1_1_PatentsInfoSum.vue";
@@ -110,6 +109,8 @@ const appStore = useAppStore();
 
 <style scoped>
 .view-h-calc {
-  height: calc(100vh - 72px);
+  block-size: calc(100vh - 72px);
+
+  /* height: calc(100vh - 72px); */
 }
 </style>

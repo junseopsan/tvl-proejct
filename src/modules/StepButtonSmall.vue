@@ -38,17 +38,15 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from "vue";
-import { useAppStore } from "@/store/app";
-import {
-  updateTask,
-  addSteps,
-  addStepsWithAssistant,
-  deleteStep,
-  checkStepObj,
-} from "@/utils/fsdb";
 import { mainprocess_send_step } from "@/api";
+import { useAppStore } from "@/store/app";
 import { cal_steps } from "@/utils/calculator";
+import {
+  checkStepObj,
+  deleteStep,
+  updateTask
+} from "@/utils/fsdb";
+import { computed, onMounted, ref } from "vue";
 
 const appStore = useAppStore();
 const isStepObj = ref(false);
@@ -132,3 +130,4 @@ const forceRestart = () => {
   }
 };
 </script>
+@/fireApi

@@ -95,11 +95,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
 import { useAppStore } from "@/store/app";
 import { updateTask } from "@/utils/fsdb";
 import { deleteTaskDb } from "@/utils/gpt";
-import { mainprocess_send_steps } from "@/api";
+import { ref } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
@@ -133,3 +132,4 @@ const setValuationTarget = async (isTrue) => {
   }
 };
 </script>
+@/fireApi

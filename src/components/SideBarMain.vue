@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex grow flex-col gap-y-2 overflow-y-auto bg-white px-6 relative"
+    class="relative flex flex-col px-6 overflow-y-auto bg-white grow gap-y-2"
   >
     <div
       class="absolute top-[64px] bottom-0 right-0 w-1 border-r border-gray-200"
@@ -30,20 +30,20 @@
             </svg>
           </div>
 
-          <nav class="flex grow text-center h-6 space-x-1 relative">
+          <nav class="relative flex h-6 space-x-1 text-center grow">
             <a
-              class="hover:text-blue-500 text-gray-700 text-sm font-semibold leading-tight pb-1 px-2 border-b-2 border-blue-500 border-opacity-70"
-              >전체 항목</a
+              class="px-2 pb-1 text-sm font-semibold leading-tight text-gray-700 border-b-2 border-blue-500 hover:text-blue-500 border-opacity-70"
+              >전체 항2목</a
             >
             <a
-              class="hover:text-blue-500 text-gray-700 text-sm font-semibold leading-tight pb-1 px-2"
+              class="px-2 pb-1 text-sm font-semibold leading-tight text-gray-700 hover:text-blue-500"
               >항목 분류</a
             >
           </nav>
 
-          <!-- <div class="flex grow text-center h-5 space-x-2 relative">
-                    <div class="text-gray-900 text-xs font-normal font-sans leading-tight pb-1 px-2 border-b-2 border-gray-500 border-opacity-70">전체 항목</div>
-                    <div class="text-neutral-500 text-xs font-normal font-sans leading-tight pb-1 px-2">항목 분류</div>
+          <!-- <div class="relative flex h-5 space-x-2 text-center grow">
+                    <div class="px-2 pb-1 font-sans text-xs font-normal leading-tight text-gray-900 border-b-2 border-gray-500 border-opacity-70">전체 항목</div>
+                    <div class="px-2 pb-1 font-sans text-xs font-normal leading-tight text-neutral-500">항목 분류</div>
                 </div> -->
         </div>
         <div class="flex-none pb-2">
@@ -64,13 +64,13 @@
 
     <!-- // 네비게이션 -->
 
-    <nav class="flex flex-1 flex-col">
-      <ul role="list" class="flex flex-1 flex-col gap-y-7">
+    <nav class="flex flex-col flex-1">
+      <ul role="list" class="flex flex-col flex-1 gap-y-7">
         <li>
           <ul role="list" class="-mx-2 space-y-1">
             <li>
               <div
-                class="cursor-pointer block rounded-md py-2 pr-2 pl-10 text-sm leading-6 font-semibold text-gray-700"
+                class="block py-2 pl-10 pr-2 text-sm font-semibold leading-6 text-gray-700 rounded-md cursor-pointer"
                 :class="[newTask ? 'bg-gray-200' : 'hover:bg-gray-300']"
                 @click="clickNewTask()"
               >
@@ -84,7 +84,7 @@
                 @mouseleave="task.current = false"
               >
                 <div
-                  class="w-full cursor-pointer block rounded-md py-2 pr-2 pl-10 text-sm leading-6 font-semibold text-gray-700"
+                  class="block w-full py-2 pl-10 pr-2 text-sm font-semibold leading-6 text-gray-700 rounded-md cursor-pointer"
                   :class="[task.current ? 'bg-gray-200' : 'hover:bg-gray-300']"
                   @click="clickMenu(task)"
                 >
@@ -97,7 +97,7 @@
         </li>
         <li v-if="appStore.taskList?.length > 0">
           <button
-            class="flex items-center justify-between w-full rounded-md py-2 pr-2 pl-10 text-sm leading-6 font-semibold bg-gray-300 text-gray-900 hover:bg-gray-200"
+            class="flex items-center justify-between w-full py-2 pl-10 pr-2 text-sm font-semibold leading-6 text-gray-900 bg-gray-300 rounded-md hover:bg-gray-200"
             :class="
               deleteLoading
                 ? 'cursor-not-allowed animate-bounce'

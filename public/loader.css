@@ -1,10 +1,14 @@
 body {
+  overflow: hidden;
   margin: 0;
+  block-size: 100vh;
 }
 
 html {
-  overflow-x: hidden;
-  overflow-y: scroll;
+  overflow: hidden scroll;
+}
+
+aside {
 }
 
 #loading-bg {

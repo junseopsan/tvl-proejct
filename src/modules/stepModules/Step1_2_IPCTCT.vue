@@ -100,13 +100,12 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
-import { useAppStore } from "@/store/app";
-import { useRouter } from "vue-router";
-import StepButtonSimple from "@/modules/StepButtonSimple.vue";
-import { updateTask, getCpcInfo } from "@/utils/fsdb";
 import { mainprocess_send_steps } from "@/api";
-import { step6_1_17, step6_1_22 } from "@/utils/calculator";
+import { useAppStore } from "@/store/app";
+import { step6_1_22 } from "@/utils/calculator";
+import { getCpcInfo, updateTask } from "@/utils/fsdb";
+import { onMounted, ref } from "vue";
+import { useRouter } from "vue-router";
 
 const appStore = useAppStore();
 const router = useRouter();
@@ -157,3 +156,4 @@ const directSetCpcCode = () => {
   cpcInfoSelected.value = directCpcValue.value;
 };
 </script>
+@/fireApi
