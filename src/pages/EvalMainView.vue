@@ -22,9 +22,6 @@
           새로운 가치를 평가해 보시겠습니까?
         </div>
         <div>
-          <v-btn block>Block Button</v-btn>
-        </div>
-        <div>
           <v-menu
             v-model="menu2"
             :close-on-content-click="false"
@@ -71,7 +68,7 @@
             aria-hidden="true"
           />
         </div>
-        <button
+        <v-btn
           type="submit"
           class="flex-none rounded-md w-24 bg-blue-500 px-2 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
           :class="{ 'cursor-not-allowed': loading }"
@@ -82,7 +79,7 @@
             class="w-4 h-4 mx-auto border-2 border-white rounded-full border-t-transparent animate-spin"
           ></div>
           <div v-else class="w-20">시작하기</div>
-        </button>
+      </v-btn>
       </div>
       <p
         v-if="errorCheck && errorMsg"
